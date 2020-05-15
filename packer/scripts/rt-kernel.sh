@@ -12,7 +12,9 @@ RT_KERNEL_SUB_VER="5.6"
 RT_KERNEL_FULL_VER="5.6.10"
 RT_KERNEL_PATCH_REL="5.6.10-rt5"
 
+# this line can be deleted because of ks.cfg where all the soft is installed but is usefull for test builds on standalone machine 
 yum install make gcc openssl-devel ncurses-devel hmaccalc zlib-devel binutils-devel elfutils-libelf-devel bc wget rpm-build flex bison -y
+
 mkdir -p /tmp/rt-kernel-$RT_KERNEL_FULL_VER
 cd /tmp/rt-kernel-$RT_KERNEL_FULL_VER
 wget https://mirrors.edge.kernel.org/pub/linux/kernel/v$RT_KERNEL_VER.x/linux-$RT_KERNEL_FULL_VER.tar.xz
