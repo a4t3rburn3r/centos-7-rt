@@ -1,6 +1,6 @@
 # CentOS 7 with real time kernel for vagrant and virtualbox
 
-## Preamle
+## Preamble
 This project was based on Bento project as recomended by Hashicorp for vagrant. All scripts except rt-kernel.sh was cloned from bento project and modifyed to drop all non CentOS 7 code and ready to build updated centos 7 box with latest kernel and real time patches.
 
 To change CentOS release, modify centos-7-rt.json in packer folder with apropriate path to centos mirror and iso name.
@@ -16,11 +16,11 @@ To test on newer kernels uncomment line with make menuconfig in rt-kernel.sh and
 ## Usage
 packer build --name centos-7-rt centos-7-rt.json
 
-Result box will be saved in packer/builds folder. All build, including rt kernel is automated.
+Result box will be saved in packer/builds folder. All build, including rt kernel compilation and installation is automated.
+To get kernel rpm's use rt-kernel.sh on standalone centos machine and comment last lines in script. Ready rpm's will be available in user_home/rpmbuild/RPMS/x86_64 folder.
 
-Latest box with kernel 5.6.10 is available in VagrantCloud as a4t3rburn3r/centos-7-rt
-Use:
-vagrant init a4t3rburn3r/centos-7-rt to initialise it.
+Latest box with kernel 5.6.10 is available in VagrantCloud as a4t3rburn3r/centos-7-rt.
+Use vagrant init a4t3rburn3r/centos-7-rt to initialise it.
 
 Sample Vagrantfile is available.
 
